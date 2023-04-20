@@ -1,6 +1,7 @@
 const net = require('net');
 
 const connect = function() {
+  // conn is the communication line to tbe server
   const conn = net.createConnection({
     host: 'localhost',
     port: 50541
@@ -26,4 +27,4 @@ const connect = function() {
   return conn;
 };
 
-module.exports = connect;
+module.exports = { connect };
