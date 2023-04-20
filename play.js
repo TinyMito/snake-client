@@ -16,7 +16,6 @@ const setupInput = function () {
 };
 
 const handleUserInput = function (key) {
-  process.stdout.write('.');
   if (key === '\u0003') {
     // Capture Ctrl+C and output following message and terminate the game
     process.stdout.write('\nYou quit the game!\n');
