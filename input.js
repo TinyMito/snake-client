@@ -13,6 +13,12 @@ const setupInput = function (conn) {
 };
 
 const handleUserInput = function (key) {
+  if (key === '1') {
+    connection.write('Say: Hello all!');
+  }
+  if (key === '2') {
+    connection.write('Say: Welcome!');
+  }
   if (key === 'w') {
     connection.write('Move: up');
   }
