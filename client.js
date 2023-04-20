@@ -12,21 +12,15 @@ const connect = function() {
     console.log(data)
   });
 
+  // On server connect
   conn.on('connect', () => {
-    console.log('Successfully connected to game server');
+    console.log('Successfully connected to game server!');
     conn.write('Name: KIP');
-/*    setInterval(function(){
-      conn.write('Move: up');
-      conn.write('Move: up');
-      conn.write('Move: left');
-      conn.write('Move: left');
-      conn.write('Move: down');
-      conn.write('Move: down');
-      conn.write('Move: right');
-      conn.write('Move: right');
-    }, 50)   
-*/  
-    
+  });
+
+  // On server close
+  conn.on('close', () => {
+    console.log('Disconnected from server!');
   });
 
   return conn;
