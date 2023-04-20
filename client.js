@@ -14,13 +14,13 @@ const connect = function() {
 
   // On server connect
   conn.on('connect', () => {
-    console.log('Successfully connected to game server!');
+    console.log('Successfully connected to the game server!');
     conn.write('Name: KIP');
   });
 
   // On server close
   conn.on('close', () => {
-    console.log('Disconnected from server!');
+    console.log('You have been disconnected from the game server!');
   });
 
   return conn;
