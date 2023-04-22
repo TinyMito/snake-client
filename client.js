@@ -1,10 +1,12 @@
 const net = require('net');
+const { IP, PORT } = require("./constants");
+
 
 const connect = function() {
   // conn is the communication line to tbe server
   const conn = net.createConnection({
-    host: 'localhost',
-    port: 50541
+    host: IP,
+    port: PORT
   });
 
   conn.setEncoding('utf-8');
