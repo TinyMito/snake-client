@@ -1,8 +1,9 @@
+const { key1Chat, key2Chat, key3Chat, key4Chat, wBind, aBind, sBind, dBind, exitBind } = require("./constants");
+
 let connection;
 
 // Stores the active TCP connection object.
-const setupInput = function (conn) {
-  // let connection contain conn connection
+const setupInput = function(conn) {
   connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
@@ -12,26 +13,33 @@ const setupInput = function (conn) {
   return stdin;
 };
 
-const handleUserInput = function (key) {
+// Capture key inputs
+const handleUserInput = function(key) {
   if (key === '1') {
-    connection.write('Say: Hello all!');
+    connection.write(key1Chat);
   }
   if (key === '2') {
-    connection.write('Say: Welcome!');
+    connection.write(key2Chat);
+  }
+  if (key === '3') {
+    connection.write(key3Chat);
+  }
+  if (key === '4') {
+    connection.write(key4Chat);
   }
   if (key === 'w') {
-    connection.write('Move: up');
+    connection.write(wBind);
   }
   if (key === 'a') {
-    connection.write('Move: left');
+    connection.write(aBind);
   }
   if (key === 's') {
-    connection.write('Move: down');
+    connection.write(sBind);
   }
   if (key === 'd') {
-    connection.write('Move: right');
+    connection.write(dBind);
   }
-  if (key === '\u0003') {
+  if (key === exitBind) {
     // Capture Ctrl+C and output following message and terminate the game
     process.stdout.write('\nYou quit the game!\n');
     process.exit();
