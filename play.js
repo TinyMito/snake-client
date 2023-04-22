@@ -1,8 +1,10 @@
 const { connect } = require('./client');
 const { setupInput } = require("./input");
+const { connectInitial } = require("./constants");
 
-console.log('Connecting ...');
+// Client first connect message
+console.log(connectInitial);
 // return conn into constant
 const conn = connect();
-// ref conn into setupInput
+// reference to conn into setupInput
 setupInput(conn);
